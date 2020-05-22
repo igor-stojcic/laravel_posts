@@ -27,11 +27,6 @@ class PostController extends Controller
         ]);
     }
 
-    public static function convert($data)
-    {
-        return Carbon::parse($data)->format('m/d/y');
-    }
-
     public function create()
     {
         return view("create_post");
@@ -78,11 +73,11 @@ class PostController extends Controller
         return redirect('/post/'.$post->id)->with('updated','Post UPDATED');
     }
 
-    public function delete($id)
+    public function delete(Post $post)
     {
-        $post = Post::find($id);
+        // $post = Post::find($id);
         $post->delete();
 
-        return redirect('/')->with("delete","Post DELETE");
+        return redirect(route('home'))->with("delete","Post DELETE");
     }
 }

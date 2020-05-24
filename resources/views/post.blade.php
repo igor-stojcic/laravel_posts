@@ -1,6 +1,6 @@
-@php
-    use \App\Http\Controllers\PostController;
-@endphp
+{{-- @php
+    use App\Http\Controllers\PostController;
+@endphp --}}
 @section('title')
     Singl post
 @endsection
@@ -17,7 +17,8 @@
                 </div>
                 <div class="card-action">
                   <a href="#">{{ $post->author }}</a>
-                  <a href="#" class="right">{{ PostController::convert($post->created_at) }}</a>
+                  <a href="#" class="right">{{ convert($post->created_at) }}</a>
+                  {{-- <a href="#" class="right">{{ PostController::convert($post->created_at) }}</a> --}}
                   <a href="/post/{{ $post->id }}/edit">Edit post</a>
                   <a href="/post/{{ $post->id }}/delete">Delete post</a>
                 </div>

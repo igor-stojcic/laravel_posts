@@ -11,3 +11,5 @@ Route::get("/post/{id}","PostController@show")->name('post.single');
 Route::get("/post/{post}/edit","PostController@edit");
 Route::put("/post/{post}/edit","PostController@update");
 Route::get("/post/{post}/delete","PostController@delete");
+
+Route::get("/users","UsersController@index");

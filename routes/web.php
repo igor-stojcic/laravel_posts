@@ -13,3 +13,5 @@ Route::put("/post/{post}/edit","PostController@update");
 Route::get("/post/{post}/delete","PostController@delete");
 
 Route::get("/users","UsersController@index");
+Route::get("/user/{user}","UsersController@destroy");
+Route::get("/user/{user}/posts","UsersController@posts");
